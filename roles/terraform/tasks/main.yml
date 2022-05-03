@@ -31,6 +31,7 @@
   apt:
     upgrade: yes
     update_cache: yes
+  ignore_errors: yes
 
 - name: Install Terraform
   shell: sudo apt-get update && sudo apt-get install terraform
