@@ -33,7 +33,9 @@
     update_cache: yes
 
 - name: Install Terraform
-  apt:
-    name: terraform
-    update_cache: yes
-    state: latest
+  shell: sudo apt-get update && sudo apt-get install terraform
+# - name: Install Terraform
+#   apt:
+#     name: terraform
+#     update_cache: yes
+#     state: latest
