@@ -30,5 +30,5 @@
   apt:
     name: terraform
     update_cache: yes
-    state: latest
+    state: present
     force_apt_get: yes
