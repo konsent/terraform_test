@@ -6,7 +6,7 @@
     update_cache: yes
     state: present
     force_apt_get: yes
-ignore_error: yes
+  ignore_errors: yes
 
 - name: Install prerequisites for terraform
   apt:
