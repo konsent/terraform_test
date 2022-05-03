@@ -25,12 +25,18 @@
     update_cache: no
     repo: "deb [arch=amd64] https://apt.releases.hashicorp.com focal main"
     state: present
+  tags: "tf1"
+
+- name: Update and upgrade apt packages
+  become: yes
+  apt:
+    upgrade: yes
+    update_cache: yes
+    cache_valid_time: 360
   tags: "tf"
 
 - name: Install Terraform
   apt:
     name: terraform
-    update_cache: yes
-    cache_valid_time: 86400
     state: present
   tags: "tf"
