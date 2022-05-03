@@ -23,7 +23,7 @@
 - name: Add Repository
   apt_repository:
     update_cache: no
-    repo: "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+    repo: "deb [arch=amd64] https://apt.releases.hashicorp.com focal main"
     state: present
   tags: "tf"
 
