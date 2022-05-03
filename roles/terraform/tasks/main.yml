@@ -23,15 +23,14 @@
 - name: Add Repository
   apt_repository:
     update_cache: no
-    repo: "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+    repo: "deb https://apt.releases.hashicorp.com $(lsb_release -cs) main"
     state: present
   tags: "tf"
 
 - name: Install Terraform
   apt:
     name: terraform
-    allow_unauthenticated: yes
     update_cache: yes
     state: present
-    force_apt_get: yes
   tags: "tf"
+#sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
