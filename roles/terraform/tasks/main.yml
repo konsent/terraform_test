@@ -29,5 +29,5 @@
 - name: Install Terraform
   apt:
     name: terraform
-    update_cache: yes
+    update_cache: no
     state: latest
