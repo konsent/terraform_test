@@ -1,0 +1,26 @@
+# Terraform Configuration
+---
+- name: Install aptitude
+  apt:
+    name: aptitude
+    update_cache: yes
+    state: latest
+    force_apt_get: yes
+
+- name: Install prerequisites for terraform
+  apt:
+    pkg: ["curl", "software-properties-common"]
+    update_cache: yes
+    cache_valid_time: 86400
+    state: present
+
+- name: Add Repository
+  apt_repository:
+    repo: deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main
+
+- name: Install Terraform
+  apt:
+    name: terraform
+    update_cache: yes
+    cache_valid_time: 86400
+    state: latest
