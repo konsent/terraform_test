@@ -15,8 +15,7 @@
     state: present
 
 - name: Add Repository
-  apt_repository:
-    repo: "deb https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+  command: sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 
 - name: Install Terraform
   apt:
