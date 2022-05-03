@@ -31,6 +31,6 @@
   apt:
     name: terraform
     update_cache: yes
-    allow_unauthenticated: yes
+    cache_valid_time: 86400
     state: present
   tags: "tf"
