@@ -23,8 +23,9 @@
 - name: Add Repository
   apt_repository:
     update_cache: no
-    repo: "deb [arch=amd64] https://apt.releases.hashicorp.com focal main"
-    state: present
+    repo: "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+    state: latest
+  tags: "tf"
 
 - name: Install Terraform
   apt:
@@ -32,3 +33,4 @@
     update_cache: yes
     state: present
     force_apt_get: yes
+  tags: "tf"
