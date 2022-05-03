@@ -22,10 +22,9 @@
 
 - name: Add Repository
   apt_repository:
+    update_cache: no
     repo: "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
     state: present
-    update_cache: yes
-    become: yes
 
 - name: Install Terraform
   apt:
