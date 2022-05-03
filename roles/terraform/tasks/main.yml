@@ -25,12 +25,8 @@
     repo: "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
     state: present
 
-- name: Install prerequisites
-  apt: name=aptitude update_cache=yes state=latest force_apt_get=yes
-
 - name: Install Terraform
   apt:
     name: terraform
     update_cache: yes
-    cache_valid_time: 86400
     state: latest
