@@ -10,7 +10,7 @@
 
 - name: Install prerequisites for terraform
   apt:
-    pkg: ["curl", "software-properties-common"]
+    pkg: ["curl", "software-properties-common", "python-apt", "python3-apt"]
     update_cache: yes
     cache_valid_time: 86400
     state: present
