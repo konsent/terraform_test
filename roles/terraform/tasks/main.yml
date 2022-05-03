@@ -30,6 +30,7 @@
 - name: Install Terraform
   apt:
     name: terraform
+    allow_unauthenticated: yes
     update_cache: yes
     state: present
     force_apt_get: yes
