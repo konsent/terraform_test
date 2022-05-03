@@ -23,7 +23,7 @@
 - name: Add Repository
   apt_repository:
     update_cache: no
-    repo: "deb [arch=amd64] https://apt.releases.hashicorp.com/{{ ansible_distribution_release }}/main"
+    repo: "deb [arch=amd64] https://apt.releases.hashicorp.com {{ ansible_distribution_release }} main"
     state: present
 
 - name: Update and upgrade apt packages
@@ -35,5 +35,5 @@
 - name: Install Terraform
   apt:
     name: terraform
-    update_cache: no
+    update_cache: yes
     state: latest
