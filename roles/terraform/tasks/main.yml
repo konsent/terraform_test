@@ -26,17 +26,15 @@
     repo: "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
     state: present
 
-- name: Update and upgrade apt packages
-  become: true
-  apt:
-    upgrade: yes
-    update_cache: yes
-  ignore_errors: yes
+# - name: Update and upgrade apt packages
+#   become: true
+#   apt:
+#     upgrade: yes
+#     update_cache: yes
+#   ignore_errors: yes
 
 - name: Install Terraform
-  shell: sudo apt-get update && sudo apt-get install terraform
-# - name: Install Terraform
-#   apt:
-#     name: terraform
-#     update_cache: yes
-#     state: latest
+  apt:
+    name: terraform
+    update_cache: yes
+    state: latest
