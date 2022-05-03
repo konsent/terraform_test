@@ -24,7 +24,7 @@
   apt_repository:
     update_cache: no
     repo: "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-    state: latest
+    state: present
   tags: "tf"
 
 - name: Install Terraform
